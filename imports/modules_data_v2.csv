@@ -149,8 +149,7 @@ A,Water Taste,taste.water,Experiment: Water,50L (15°C),Deals additional damage 
 A,Super Bounce,spell.superbounce,R09: Beach,Hint: [3]Show Spoiler,Spawns a missile that jumps lots of times. BudeEBoy exploited the Developers to create this module.,ACTIVE INSTANT AREA COMMUNITY
 A,Toxic Piranha Ivy,spell.toxicivy,Boss 2,Artifact: Vine Monster,Spawns a poisonous vine that emits a highly toxic poison that damages units with nature damage based on their current hitpoints and additionally slows their movement- and attackspeed. Has a 25% chance to emit heavy toxins(red color) instead which deals damage based on max hp and ignores any type of resistance or reduction. The poison lasts up to 60 seconds.,NATURE
 A,Steini's Chained Ball,steini.chained.ball,R08: Metallic Ruins,Random 0.05%,Reduces the tower's attackspeed in exchange for increasing its attack damage.,COMMUNITY DAMAGE ATTACKSPEED
-A,Omega Synergy,synergy.omega,16,"1000000 1000
- 1000",Multiplies the total Universal damage multiplier with the total Neutral damage multiplier raised to a certain power. Does the same thing vice versa.,NEUTRAL UNIVERSAL INFINITY DAMAGE
+A,Omega Synergy,synergy.omega,16,"1000000 1000 1000",Multiplies the total Universal damage multiplier with the total Neutral damage multiplier raised to a certain power. Does the same thing vice versa.,NEUTRAL UNIVERSAL INFINITY DAMAGE
 A,Poison Sting,sting.poison,Challenge: 4-5,Challenge Completion,Poisons enemies on regular attacks. Deals a percentage of the current hitpoints of the target as nature damage per second. Additionally lowers the target's nature resistance. Stacks with itself. Higher stacks decrease nature resistance further.,NATURE DAMAGE
 A,Volcano Gift,gift.volcano,Challenge: 5-6,Challenge Completion,Slowly increases the fire damage dealt by the user of this module. Resets when the tower dies or the current round restarts.,FIRE DAMAGE
 A,Google's Influence,google.influence,ERA Experiment: Darkness,1%,"Increases the area of effect of all modules inside a specific category and reduces it for all the others. Using this module again cycles through all available modes which contain ""spells"" (active modules), ""passive"" (passive area effects) and ""auras"" (modules with aura in their name). Starts off with ""spells"". Google_HQ's influence made this module suddenly appear.",ACTIVE INSTANT BUFF AREA COMMUNITY
@@ -181,7 +180,6 @@ B,Basic Shield,shield.basic,R03: Winter,Wave 50,Provides the tower with a shield
 B,Boss shield,shield.boss,R03: Winter,1.2%,Reduces the incoming damage from Boss enemies.,REACTIVE BLOCK BOSS
 B,Bulletproof,defense.bulletproof,R06: High Mountain,0.9%,Provides resistance against incoming damage from ranged units like archers and wizards.,REACTIVE BLOCK ARCHER WIZARD
 B,Checkerboard Aura,aura.checkerboard,Mine: Second Floor,0.5%,Reduces the base resistance of nearby enemies against Neutral and Universal damage. Negative base resistance amplifies damage of the according element type.,AURA DEBUFF
-B,Daigoparry,defense.daigoparry,Arcade: Secret,Konami code,Parry the next 15 hits that would kill you,REACTIVE BLOCK
 B,Darkness Armor,resistance.abs.darkness,R04: Underground,5%,Reduces incoming Darkness damage by a fixed amount.,ARMOR
 B,Darkness Barrier,barrier.darkness,R09: Beach,1%,Damages attackers by an amount (based on your max. shield points) of damage type Darkness as long as your current shield points are greater than 0.,REACTIVE DAMAGE
 B,Darkness Block,block.darkness,R14: Universe,1%,Provides a chance to fully block incoming Darkness damage.,BLOCK CHANCE
@@ -363,8 +361,7 @@ D,Void,spell.void,Arcade: Jumble,,Creates a dark void in the targeted area that 
 D,Mjölnir,electricity.mjoelnir,Challenge: 3-5,Challenge Completion,"Increases the towers electricity damage for every ice giant... erm... tank or boss enemy killed (multiplicative with other bonuses, additive to itself). The bonus damage stays until the end of a round.",ELECTRICITY
 D,Knight's Boost of Power,knight.power,ERA Experiment: Universal,?%,This module increases xp gain and has two states: 1)Increase attack speed and decrease range 2)Decrease attack speed and increase range. By KnightJR,TOGGLEABLE ATTACKSPEED RANGE COMMUNITY
 D,W.I.N.C.E.,reflect.wince,#N/A,#N/A,#N/A,#N/A
-D,Deep Slumber,slumber.deep,17,"50000 30000
- 250000","Provides a chance to stun the primary target for one year. If the attempt fails, the target will become immune to the effects of this ability for a certain amount of time.",STUN CHANCE INFINITY
+D,Deep Slumber,slumber.deep,17,"50000 30000 250000","Provides a chance to stun the primary target for one year. If the attempt fails, the target will become immune to the effects of this ability for a certain amount of time.",STUN CHANCE INFINITY
 D,L.O.S.O. Drone System,spell.drone.system,#N/A,#N/A,#N/A,#N/A
 D,Tremors,spell.tremors,Challenge: 4-4,Challenge Completion,Provides a chance which is evaluated per individual stunned enemy on the map to set that particular enemies' health to 1.,ACTIVE INSTANT STUN AREA
 D,Neutral Gift,gift.neutral,Challenge: 11-6,Challenge Completion,Multiplies all outgoing Neutral damage by a constant factor and divides all outgoing damage from other elements by half of the amount.,DAMAGE NEUTRAL
@@ -392,3 +389,5 @@ E,Angelic Core,core.angelic,Challenge: 13-5,Challenge Completion,Changes the bas
 F,Kit's Toolkit,toolkit.kit,,Hint: [5]Show Spoiler,Multiplies outgoing projectile damage of any type by a constant factor that gets divided for each module inside your blueprint other than itself. Multiplier cannot go below 1.,DAMAGE
 F,Chaos Gift,gift.chaos,Challenge: 15-6,Challenge Completion,Provides a 1+((tier-1)/4)% chance to cast an active module with a ground target a second time at a random location within the caster's attack range with no additional cost. The second cast does not trigger any modules that react to active modules.,GROUND CHANCE
 F,Confusion Field,spell.confusion,Show Spoiler,Show Spoiler,All units in the targeted area temporarily change their ownership to the owner of this module. They additionally gain a multiplicative bonus to their attack damage. Lasts up to 15sec. radius depends on tier.,ACTIVE AREA CONTROL COMMUNITY
+F,Bluecat's Harmonizer,harmonizer.bluecat,Spoiler,Spoiler,Spoiler,DAMAGE COOLDOWN COST COMMUNITY
+F,Daigoparry,defense.daigoparry,Arcade: Secret,Konami code,Parry the next 15 hits that would kill you,REACTIVE BLOCK

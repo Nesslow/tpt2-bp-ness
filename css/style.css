@@ -3,7 +3,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 .container {
-    width: 100%;
+    width: 80%;
     height: 100%;
     margin: 0 auto;
     padding: 0;
@@ -40,6 +40,7 @@ body {
 .mod-item[data-mod-type="C"] > .mod-name {background: #fdc610;}
 .mod-item[data-mod-type="D"] > .mod-name {background: #d23dff;}
 .mod-item[data-mod-type="E"] > .mod-name {background: #6d6d6d;}
+.mod-item[data-mod-type="F"] > .mod-name {background: #f57309;}
 .mod-name {
     border: 1px solid #333;
     margin: 0 0 2px 0;
@@ -63,11 +64,12 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom:5px;
 }
 .filter-toggle-btn {
     width: 100%;
     border: 1px solid #333;
-    margin: 5px 0;
     padding: 4px 10px;
     cursor: pointer;
 }

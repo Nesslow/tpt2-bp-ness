@@ -54,6 +54,7 @@ $("#filter-toggle-btn-0").click(function() {
     $("#filter-toggle-btn-3").removeClass("filter-toggle-btn-active");
     $("#filter-toggle-btn-4").removeClass("filter-toggle-btn-active");
     $("#filter-toggle-btn-5").removeClass("filter-toggle-btn-active");
+    $("#filter-toggle-btn-6").removeClass("filter-toggle-btn-active");
     $("#mod-list").children().each(function() {
         let mod = $(this);
         mod.show();
@@ -66,6 +67,7 @@ $("#filter-toggle-btn-1").click(function() {
     $("#filter-toggle-btn-3").removeClass("filter-toggle-btn-active");
     $("#filter-toggle-btn-4").removeClass("filter-toggle-btn-active");
     $("#filter-toggle-btn-5").removeClass("filter-toggle-btn-active");
+    $("#filter-toggle-btn-6").removeClass("filter-toggle-btn-active");
     $("#mod-list").children().each(function() {
         let mod = $(this);
         if (mod.attr("data-mod-type") == "A") {
@@ -82,6 +84,7 @@ $("#filter-toggle-btn-2").click(function() {
     $("#filter-toggle-btn-3").removeClass("filter-toggle-btn-active");
     $("#filter-toggle-btn-4").removeClass("filter-toggle-btn-active");
     $("#filter-toggle-btn-5").removeClass("filter-toggle-btn-active");
+    $("#filter-toggle-btn-6").removeClass("filter-toggle-btn-active");
     $("#mod-list").children().each(function() {
         let mod = $(this);
         if (mod.attr("data-mod-type") == "B") {
@@ -98,6 +101,7 @@ $("#filter-toggle-btn-3").click(function() {
     $("#filter-toggle-btn-3").toggleClass("filter-toggle-btn-active");
     $("#filter-toggle-btn-4").removeClass("filter-toggle-btn-active");
     $("#filter-toggle-btn-5").removeClass("filter-toggle-btn-active");
+    $("#filter-toggle-btn-6").removeClass("filter-toggle-btn-active");
     $("#mod-list").children().each(function() {
         let mod = $(this);
         if (mod.attr("data-mod-type") == "C") {
@@ -114,6 +118,7 @@ $("#filter-toggle-btn-4").click(function() {
     $("#filter-toggle-btn-3").removeClass("filter-toggle-btn-active");
     $("#filter-toggle-btn-4").toggleClass("filter-toggle-btn-active");
     $("#filter-toggle-btn-5").removeClass("filter-toggle-btn-active");
+    $("#filter-toggle-btn-6").removeClass("filter-toggle-btn-active");
     $("#mod-list").children().each(function() {
         let mod = $(this);
         if (mod.attr("data-mod-type") == "D") {
@@ -130,9 +135,27 @@ $("#filter-toggle-btn-5").click(function() {
     $("#filter-toggle-btn-3").removeClass("filter-toggle-btn-active");
     $("#filter-toggle-btn-4").removeClass("filter-toggle-btn-active");
     $("#filter-toggle-btn-5").toggleClass("filter-toggle-btn-active");
+    $("#filter-toggle-btn-6").removeClass("filter-toggle-btn-active");
     $("#mod-list").children().each(function() {
         let mod = $(this);
         if (mod.attr("data-mod-type") == "E") {
+            mod.show();
+        } else {
+            mod.hide();
+        }
+    });
+});
+$("#filter-toggle-btn-6").click(function() {
+    $("#filter-toggle-btn-0").removeClass("filter-toggle-btn-active");
+    $("#filter-toggle-btn-1").removeClass("filter-toggle-btn-active");
+    $("#filter-toggle-btn-2").removeClass("filter-toggle-btn-active");
+    $("#filter-toggle-btn-3").removeClass("filter-toggle-btn-active");
+    $("#filter-toggle-btn-4").removeClass("filter-toggle-btn-active");
+    $("#filter-toggle-btn-5").toggleClass("filter-toggle-btn-active");
+    $("#filter-toggle-btn-6").removeClass("filter-toggle-btn-active");
+    $("#mod-list").children().each(function() {
+        let mod = $(this);
+        if (mod.attr("data-mod-type") == "F") {
             mod.show();
         } else {
             mod.hide();
@@ -247,16 +270,31 @@ $("#bp-list").on("mouseleave", ".mod-item", function() {
     mod_info.hide();
 });
 
-// on paste to #import, get clipboard data and decode from base64
 $("#import").on("paste", function(e) {
     let clipboard_data = e.originalEvent.clipboardData.getData("text");
     let decoded_data = atob(clipboard_data);
-    // create array seperated by ";"
     let decoded_data_array = decoded_data.split(";");
-    // for each item in array find matching data-mod-enc and add mod to #bp-list, remove from #mod-list
-    for (let i = 0; i < decoded_data_array.length; i++) {
-        // BLA BLA BLA BLA
+
+    console.log(decoded_data_array);
+
+    for (let i = 1; i < decoded_data_array.length; i++) {
+        let modValue = decoded_data_array[i];
+
+        console.log(modValue);
+
+        // Find elements with matching data-mod-enc attribute
+        $("[data-mod-enc='" + modValue + "']").each(function() {
+            // Clone the element to add to #bp-list
+            let clonedElement = $(this).clone();
+            
+            // Append the cloned element to #bp-list
+            $("#bp-list").append(clonedElement);
+
+            // Remove the original element from #mod-list
+            $(this).remove();
+        });
     }
+
     sortList('#bp-list');
     exportData();
 });
