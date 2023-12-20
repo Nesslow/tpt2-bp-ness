@@ -60,23 +60,6 @@ body {
     background:#ddd;
     border: 1px solid #333;
 }
-.filter-toggle-btn-wrap {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom:5px;
-}
-.filter-toggle-btn {
-    width: 100%;
-    border: 1px solid #333;
-    padding: 4px 10px;
-    cursor: pointer;
-}
-.filter-toggle-btn-active {
-    background: #555;
-    color: #fff;
-}
 .search-input {
     width: calc(100% - 7px);
     height: 25px;
