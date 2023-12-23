@@ -67,6 +67,10 @@ body {
 .search-input:focus {
     outline: none;
 }
+.name-input {
+    width: calc(100% - 7px);
+    height: 25px;
+}
 ::-webkit-scrollbar {
     width: 10px;
 }

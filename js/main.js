@@ -158,12 +158,12 @@ $("#import").on("paste", function(e) {
     let decoded_data = atob(clipboard_data);
     let decoded_data_array = decoded_data.split(";");
 
-    console.log(decoded_data_array);
+    let bpName_box = $("#name-input");
+    let bpName = decoded_data_array[0];
+    bpName_box.val(bpName);
 
     for (let i = 1; i < decoded_data_array.length; i++) {
         let modValue = decoded_data_array[i];
-
-        console.log(modValue);
 
         // Find elements with matching data-mod-enc attribute
         $("[data-mod-enc='" + modValue + "']").each(function() {
@@ -184,11 +184,15 @@ $("#import").on("paste", function(e) {
 
 // export function
 function exportData() {
-    let export_text = [];
+
+    let bpName = $("#name-input").val();
+    let export_text = [bpName];
+
     $("#bp-list").children().each(function() {
         let mod = $(this);
         let mod_enc = mod.attr("data-mod-enc");
         export_text.push(mod_enc);
+        console.log(export_text);
     });
     let export_text_encoded = btoa(export_text.join(";"));
     $("#export").val(export_text_encoded);
